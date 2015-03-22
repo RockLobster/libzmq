@@ -74,6 +74,9 @@ foreach(test ${tests})
   else()
     add_test(NAME ${test} COMMAND ${test})
   endif()
+
+  set_property(TARGET ${test} PROPERTY FOLDER "ZeroMQ/tests")
+
 endforeach()
 
 if(NOT WIN32)

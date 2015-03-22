@@ -670,7 +670,17 @@ if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug") # Why?
               RUNTIME DESTINATION bin
               COMPONENT PerfTools)
     endif()
+
+    set_property(TARGET ${perf-tool} PROPERTY FOLDER "ZeroMQ/perf-tools")
+
   endforeach()
+endif()
+
+if(TARGET libzmq)
+  set_property(TARGET libzmq PROPERTY FOLDER "ZeroMQ")
+endif()
+if(TARGET libzmq-static)
+  set_property(TARGET libzmq-static PROPERTY FOLDER "ZeroMQ")
 endif()
 
 #-----------------------------------------------------------------------------
